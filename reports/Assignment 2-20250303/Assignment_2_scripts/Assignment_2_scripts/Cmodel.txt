@@ -1,0 +1,14 @@
+
+  model {
+    for ( cIdx in 1:Ncat ) {
+      z[cIdx] ~ dbin( theta[cIdx] , N[cIdx] )
+      theta[cIdx] ~ dbeta( omega*(kappa-2)+1 , 
+                           (1-omega)*(kappa-2)+1 ) 
+    }
+    omega ~ dbeta( omega0*(kappa0-2)+1, omega0*(kappa0-2)+1 ) 
+    kappa <- kappaMinusTwo + 2
+    kappaMinusTwo ~ dgamma( 0.01 , 0.01 )  # mean=1 , sd=10 (generic vague)
+    omega0 <- 0.3
+    kappa0 <- 10
+  }
+  

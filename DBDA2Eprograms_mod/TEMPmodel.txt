@@ -1,0 +1,29 @@
+
+  # Standardize the data:
+  data {
+    Ntotal <- length(y)
+    xm <- mean(x)
+    ym <- mean(y)
+    xsd <- sd(x)
+    ysd <- sd(y)
+    #for ( i in 1:length(y) ) {
+    #  zx[i] <- ( x[i] - xm ) / xsd
+    #  zy[i] <- ( y[i] - ym ) / ysd
+    #}
+  }
+  # Specify the model for standardized data:
+  model {
+    for ( i in 1:Ntotal ) {
+      y[i] ~ dt( beta0 + beta1 * x[i] , 1/sigma^2 , nu )
+    }
+    # Priors vague on standardized scale:
+    beta0 ~ dnorm( 0 , 1/(10)^2 )  
+    beta1 ~ dnorm( 0 , 1/(10)^2 )
+    sigma ~ dunif( 1.0E-3 , 1.0E+3 )
+    nu ~ dexp(1/30.0)
+    # Transform to original scale:
+    #beta1 <- zbeta1 * ysd / xsd  
+    #beta0 <- zbeta0 * ysd  + ym - zbeta1 * xm * ysd / xsd 
+    #sigma <- zsigma * ysd
+  }
+  

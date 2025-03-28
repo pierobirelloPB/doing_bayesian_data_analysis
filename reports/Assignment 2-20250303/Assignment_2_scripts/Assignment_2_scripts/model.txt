@@ -1,0 +1,17 @@
+
+# JAGS model specification
+model {
+# Likelyhood
+for (j in 1:nItemsTotal) {
+y[j] ~ dbin( theta[machines[j]], 40 )
+}
+# Prior
+for (i in 1:nMachines){
+theta[i] ~ dnorm( normMu, 1/normSigma^2 )T( 0.0,0.5 )
+}
+# Hyperpriors
+normMu ~ dbeta( 1.1, 9.9 )
+normSigma ~ dgamma( 2, 28 )
+}
+# ... JAGS model specification ends.
+

@@ -1,0 +1,9 @@
+# Ignore everything except folder1 and folder2
+*
+!DBDA2Eprograms_mod/
+!DBDA2Eprograms_mod/**
+!reports/
+!reports/**
+!Kruschke_Bayesian_Data_Analysis_2nd_ed.pdf
+!.gitignore
+
