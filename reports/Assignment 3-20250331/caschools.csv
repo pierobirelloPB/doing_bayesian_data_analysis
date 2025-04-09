@@ -1,0 +1,250 @@
+county,district,testscr,stratio
+Alameda,Sunol Glen Unified,690.7999878,17.88990974
+Butte,Thermalito Union Elementary,643.5999756,18.69722557
+Butte,Golden Feather Union Elementary,647.7000122,17.3571434
+Butte,Palermo Union Elementary,640.8499756,18.6713295
+Butte,Oroville City Elementary,639.7999878,19.37339783
+Calaveras,Mark Twain Union Elementary,656.8000488,21.08548164
+Contra Costa,Knightsen Elementary,635.0499878,17.66766739
+Contra Costa,Oakley Union Elementary,655.0500488,20.77954483
+Contra Costa,Walnut Creek Elementary,684.8000488,20.7070713
+Contra Costa,Moraga Elementary,696.5500488,19.15261078
+El Dorado,Camino Union Elementary,644.4000244,17.01863289
+El Dorado,Pioneer Union Elementary,655.7999878,22.53846169
+El Dorado,Pollock Pines Elementary,659.1500244,20.66963577
+El Dorado,Mother Lode Union Elementary,664.7000122,19.19101143
+El Dorado,Gold Oak Union Elementary,671.2999878,19.28888893
+El Dorado,Buckeye Union Elementary,671.5999756,20.34927368
+Fresno,West Fresno Elementary,616.2999878,21
+Fresno,Raisin City Elementary,627.0999756,16.22857094
+Fresno,West Park Elementary,635.75,16.31168747
+Fresno,Pacific Union Elementary,636.5,17.88679314
+Fresno,Monroe Elementary,640.0999756,18.3035717
+Fresno,American Union Elementary,642.4000244,18.6607151
+Fresno,Alvina Elementary,655.0499878,16.9902916
+Fresno,Clay Joint Elementary,672.5500488,21.58415794
+Glenn,Plaza Elementary,651.8000488,20.74073982
+Glenn,Lake Elementary,664.9499512,25.79999924
+Glenn,Capay Joint Union Elementary,666.1500244,18
+Humboldt,Rio Dell Elementary,635.1999512,17.75499153
+Humboldt,Cuddeback Union Elementary,645.25,17.52941132
+Humboldt,South Bay Union Elementary,650.5499878,16.38176727
+Humboldt,Fortuna Union Elementary,651.4000244,18.95504189
+Humboldt,Rohnerville Elementary,652.3499756,19.26544189
+Humboldt,Loleta Union Elementary,653.8499756,15.25885487
+Humboldt,Scotia Union Elementary,658.3499756,18.68686867
+Humboldt,Cutten Elementary,663.5,18.82998085
+Humboldt,Freshwater Elementary,667.4500122,19.52191162
+Humboldt,Jacoby Creek Elementary,678.0500488,18.72860527
+Imperial,Westmorland Union Elementary,620.5,18.33333397
+Imperial,Brawley Elementary,638.3000488,20.46258545
+Imperial,Meadows Union Elementary,638.3000488,22.29157257
+Imperial,El Centro Elementary,641.4499512,21.11500168
+Imperial,Magnolia Union Elementary,652,21.60000038
+Kern,Vineland Elementary,609,20.89411736
+Kern,Lost Hills Union Elementary,618.0500488,16.97786903
+Kern,Buttonwillow Union Elementary,618.3000488,16.50980377
+Kern,Richland-Lerdo Union Elementary,627.2999878,20.27736664
+Kern,Fairfax Elementary,628.5500488,19.82084656
+Kern,Delano Union Elementary,628.6500244,23.20522308
+Kern,Edison Elementary,630.4000244,20.87179565
+Kern,Bakersfield City Elementary,630.5499878,19.0174942
+Kern,Beardsley Elementary,634,18.11049652
+Kern,Di Giorgio Elementary,634.1999512,21.54545403
+Kern,Greenfield Union Elementary,636.9500122,20.1955986
+Kern,Pond Union Elementary,638.5499878,19.06005287
+Kern,Taft City Elementary,638.7000122,20.23246956
+Kern,Standard Elementary,639.8499756,19.15515518
+Kern,General Shafter Elementary,643.6999512,22.39999962
+Kern,Lakeside Union Elementary,653.5,19.92462349
+Kern,Kernville Union Elementary,654.2999878,18.21261406
+Kern,Panama Buena Vista Union Elementary,661.8499756,19.95551109
+Kern,Rosedale Union Elementary,662.6500244,20.79109383
+Kern,Norris Elementary,667.4500122,20.68621826
+Kings,Hanford Elementary,634.0999756,22.62360764
+Kings,Lakeside Union Elementary,634.5499878,16.63333321
+Kings,Island Union Elementary,646.9499512,21.39130402
+Kings,Pioneer Union Elementary,666.5500488,21.11986351
+Kings,Kings River-Hardwick Union Elementary,668.4000244,18.58064461
+Lake,Lucerne Elementary,637.3499756,20
+Lake,Upper Lake Union Elementary,645.5999756,17.18613434
+Lassen,Janesville Union Elementary,651.9000244,19.84615326
+Lassen,Johnstonville Elementary,666.6500244,22.18181801
+Lassen,Richmond Elementary,672.4500122,22
+Los Angeles,Lennox Elementary,619.7999878,22.70402336
+Los Angeles,Mountain View Elementary,625.2999878,21.53581429
+Los Angeles,Lawndale Elementary,632.2000122,20.49797058
+Los Angeles,South Whittier Elementary,634.0500488,20.68242455
+Los Angeles,Keppel Union Elementary,634.4000244,21.15289116
+Los Angeles,El Monte City Elementary,636.9000244,21.28683853
+Los Angeles,Wilsona Elementary,638.2000122,19.37894821
+Los Angeles,Little Lake City Elementary,638.3499756,20.70473862
+Los Angeles,Palmdale Elementary,639.75,22.9235096
+Los Angeles,Lancaster Elementary,640.1500244,21.07925606
+Los Angeles,Garvey Elementary,643.4000244,21.37363243
+Los Angeles,East Whittier City Elementary,648.2000122,21.38424492
+Los Angeles,Rosemead Elementary,654.0999756,21.81333351
+Los Angeles,Wiseburn Elementary,658,21.0629921
+Los Angeles,Castaic Union Elementary,659.3499756,22.28155327
+Los Angeles,Sulphur Springs Union Elementary,662.5500488,20.92731857
+Los Angeles,Lowell Joint Elementary,669.0999756,22.54607582
+Los Angeles,Newhall Elementary,669.3000488,21.10344315
+Los Angeles,Saugus Union Elementary,671.75,20.91979408
+Madera,Chowchilla Elementary,631.4000244,21.476511
+Madera,Alview-Dairyland Union Elementary,640.5,18.79120827
+Madera,Chawanakee Jt. Elementary,659.7999878,19.22492409
+Madera,Bass Lake Joint Elementary,663.4499512,19.29373932
+Marin,Lagunitas Elementary,669.3000488,18.19742584
+Marin,Dixie Elementary,679.4000244,17.98825264
+Marin,Kentfield Elementary,681.9000244,17.57976151
+Marin,Ross Valley Elementary,682.5499878,18.10240936
+Marin,Mill Valley Elementary,694.25,17.70045471
+Mendocino,Arena Union Elementary,639.3000488,20.36253929
+Merced,Le Grand Union Elementary,615.75,21.23809433
+Merced,Atwater Elementary,635.9500122,21.12796211
+Merced,Weaver Union Elementary,636.0999756,17.48801231
+Merced,Merced River Union Elementary,644.9500122,19.568964
+Merced,McSwain Union Elementary,647.5999756,18.22055054
+Monterey,King City Union Elementary,625.8499756,19.90399933
+Monterey,Salinas City Elementary,631.8499756,20.06578827
+Monterey,Santa Rita Union Elementary,632.4499512,22.25658035
+Monterey,Washington Union Elementary,679.8000488,19.59906197
+Nevada,Grass Valley Elementary,654.1999512,19.07471275
+Nevada,Chicago Park Elementary,656.5,14.20176315
+Nevada,Union Hill Elementary,674.25,18.7069416
+Nevada,Pleasant Ridge Union Elementary,676.5499878,20.32496643
+Orange,Savanna Elementary,649.1500244,22.17007065
+Orange,Fullerton Elementary,652.0999756,23.01437569
+Orange,Centralia Elementary,657.7999878,21.46391678
+Orange,Ocean View Elementary,664.75,20.13080025
+Orange,Huntington Beach City Elementary,666,21.6426239
+Orange,Cypress Elementary,668.9500122,20.33942032
+Placer,Ophir Elementary,650.9000244,19.39130402
+Placer,Auburn Union Elementary,655.5499878,21.01795578
+Placer,Roseville City Elementary,661.9000244,20.57838249
+Placer,Colfax Elementary,662.75,19.02439117
+Placer,Rocklin Unified,671.5999756,20.96416092
+Placer,Loomis Union Elementary,671.9000244,20.90021324
+Placer,Placer Hills Union Elementary,671.9000244,20.59574509
+Placer,Alta-Dutch Flat Union Elementary,673.5499878,18.90909004
+Placer,Newcastle Elementary,676.5999756,20.02456856
+Sacramento,Del Paso Heights Elementary,612.6500244,20.80555534
+Sacramento,Robla Elementary,632.25,20
+Sacramento,Arcohe Union Elementary,646.2000122,19.96153831
+San Benito,Southside Elementary,654.8499756,16.97297287
+San Benito,North County Joint Union Elementary,655.6999512,19.0556488
+San Bernardino,Ontario-Montclair Elementary,626.0999756,21.19406891
+San Bernardino,Victor Elementary,648.9499512,22.3497715
+San Bernardino,Central Elementary,655.8499756,21.10787201
+San Bernardino,Etiwanda Elementary,657.9000244,23.08492279
+San Bernardino,Mountain View Elementary,658.5999756,20.77023506
+San Bernardino,Alta Loma Elementary,664.4000244,23.55637169
+San Diego,San Ysidro Elementary,624.5500488,20.60696602
+San Diego,National Elementary,634.0999756,21.78649902
+San Diego,Lemon Grove Elementary,645.5500488,19.79653931
+San Diego,Chula Vista Elementary,647.25,20.2913723
+San Diego,Escondido Union Elementary,648,20.198946
+San Diego,Vallecitos Elementary,648.7000122,17.15328407
+San Diego,Jamul-Dulzura Union Elementary,652.8499756,19.8214283
+San Diego,Lakeside Union Elementary,654.8499756,21.50087357
+San Diego,Alpine Union Elementary,667.1500244,20.89195442
+San Diego,Julian Union Elementary,668.5999756,18.04000092
+San Diego,Cardiff Elementary,668.6500244,17.73398972
+San Diego,Bonsall Union Elementary,668.9000244,19.92342567
+San Diego,Dehesa Elementary,669.8499756,20.88888931
+San Diego,San Pasqual Union Elementary,673.5499878,16.4069252
+San Diego,Encinitas Union Elementary,678.7999878,20.05491257
+San Diego,Del Mar Union Elementary,695.1999512,18.26539421
+San Joaquin,Holt Union Elementary,606.75,19.5
+San Joaquin,New Jerusalem Elementary,646.3499756,19.0394516
+San Joaquin,Jefferson Elementary,655.1999512,19.88505745
+San Luis Obispo,Pleasant Valley Joint Union Elementary,658.7999878,19.30555534
+San Mateo,Bayshore Elementary,637.9500122,18.99256897
+San Mateo,Redwood City Elementary,644.2000122,17.34215736
+San Mateo,Brisbane Elementary,656.5500488,18.47686768
+San Mateo,Laguna Salada Union Elementary,661.8499756,21.18387032
+San Mateo,San Mateo-Foster City Elementary,664.9500122,18.77774048
+San Mateo,San Carlos Elementary,672.0499878,19.95122337
+San Mateo,Belmont-Redwood Shores Elementary,673.25,18.27778244
+San Mateo,Woodside Elementary,695.2999878,14.54213619
+Santa Barbara,Guadalupe Union Elementary,634.9000244,19.78181839
+Santa Barbara,Santa Barbara Elementary,652.3000488,18.28664017
+Santa Barbara,Buellton Union Elementary,659.4000244,20.82733917
+Santa Barbara,Goleta Union Elementary,665.0999756,19.1098156
+Santa Barbara,College Elementary,665.9000244,20
+Santa Barbara,Ballard Elementary,682.1500244,22.33333397
+Santa Barbara,Montecito Union Elementary,691.0499878,17.25806427
+Santa Clara,Luther Burbank Elementary,637.6500244,18.72950935
+Santa Clara,Mt. Pleasant Elementary,641.0999756,20.87187195
+Santa Clara,Whisman Elementary,653.5499878,19.00985718
+Santa Clara,Berryessa Union Elementary,655.3000488,21.39882278
+Santa Clara,Campbell Union Elementary,657,19.82557678
+Santa Clara,Loma Prieta Joint Union Elemen,680.4500122,18.58848381
+Santa Clara,Los Gatos Union Elementary,689.0999756,19.57567215
+Santa Clara,Saratoga Union Elementary,700.3000488,18.86533928
+Santa Clara,Los Altos Elementary,706.75,17.86262512
+Santa Cruz,Live Oak Elementary,653.0999756,20.43377876
+Santa Cruz,Santa Cruz City Elementary,664.1500244,18.87325668
+Santa Cruz,Soquel Elementary,666.0999756,19.81139755
+Santa Cruz,Mountain Elementary,682.6500244,20.2564106
+Shasta,Cascade Union Elementary,641.5499878,19.91048813
+Shasta,Black Butte Union Elementary,647.2999878,17.66666603
+Shasta,Enterprise Elementary,649.5,18.95714378
+Shasta,Pacheco Union Elementary,656.4000244,20.05135345
+Shasta,Happy Valley Union Elementary,656.7000122,20.94594574
+Shasta,Bella Vista Elementary,662.4000244,20.81632614
+Shasta,Columbia Elementary,662.7000122,19.20353889
+Shasta,Cottonwood Union Elementary,669.9500122,18.39150238
+Siskiyou,McCloud Union Elementary,635.5999756,14
+Siskiyou,Big Springs Union Elementary,643.5,15.4285717
+Siskiyou,Dunsmuir Elementary,646.4000244,15.22435951
+Siskiyou,Mt. Shasta Union Elementary,662.9000244,17.62057877
+Siskiyou,Fort Jones Union Elementary,666.8499756,14.70588207
+Sonoma,Roseland Elementary,634.1500244,18.58293152
+Sonoma,Bellevue Union Elementary,643.25,18.80921936
+Sonoma,Montgomery Elementary,650.9000244,16.4285717
+Sonoma,Guerneville Elementary,657.5500488,18.78676414
+Sonoma,Harmony Union Elementary,661.5999756,20.56142807
+Sonoma,Forestville Union Elementary,662.5500488,19.94436646
+Sonoma,Piner-Olivet Union Elementary,663.3499756,20.23715401
+Sonoma,Wright Elementary,663.8499756,19.22899628
+Sonoma,Wilmar Union Elementary,664,19.08450699
+Sonoma,Mark West Union Elementary,666.8499756,19.04076767
+Sonoma,Sebastopol Union Elementary,667.1999512,19.8385067
+Sonoma,Waugh Elementary,672.6999512,20.38888931
+Sonoma,Two Rock Union Elementary,673.0499878,16.29310226
+Sonoma,Twin Hills Union Elementary,675.4000244,18.32985306
+Sonoma,Fort Ross Elementary,678.4000244,15.88235283
+Sonoma,Bennett Valley Union Elementary,680.0500488,20.54347801
+Sonoma,Kenwood Elementary,681.2999878,15.60418606
+Sonoma,Liberty Elementary,681.2999878,15.29304028
+Sutter,Brittan Elementary,639.25,19.6901226
+Sutter,Franklin Elementary,647.5999756,20.27100182
+Sutter,Browns Elementary,657.1500244,19.75
+Tehama,Gerber Union Elementary,642.1999512,18.13333321
+Tehama,Antelope Elementary,657.75,19.33333397
+Tehama,Evergreen Union Elementary,663.9000244,17.89130402
+Trinity,Douglas City Elementary,676.1500244,18.91156578
+Trinity,Weaverville Elementary,676.9499512,17.6078434
+Tulare,Allensworth Elementary,616.2999878,20.60000038
+Tulare,Pleasant View Elementary,621.4000244,22.61904716
+Tulare,Alta Vista Elementary,622.0500488,25.05263138
+Tulare,Woodlake Union Elementary,623.0999756,18.68235207
+Tulare,Terra Bella Union Elementary,623.5999756,19.25
+Tulare,Tipton Elementary,624.1500244,20.54545403
+Tulare,Strathmore Union Elementary,632.9500122,19.47737122
+Tulare,Palo Verde Union Elementary,637,24.95000076
+Tulare,Oak Valley Union Elementary,638,19.88764191
+Tulare,Liberty Elementary,640.9000244,19.59016418
+Tulare,Kings River Union Elementary,641.8000488,17.81285095
+Tulare,Exeter Union Elementary,642.2000122,19.22221184
+Tulare,Burton Elementary,643.0499878,19.28384209
+Tulare,Sundale Union Elementary,660.1999512,19.78260803
+Tulare,Three Rivers Union Elementary,660.2999878,22.30215836
+Tulare,Columbine Elementary,662.4000244,20
+Tulare,Springville Union Elementary,667.5999756,18.18181801
+Tulare,Saucelito Elementary,668.7999878,21.45454597
+Tuolumne,Jamestown Elementary,649.8499756,16.42622948
+Tuolumne,Summerville Elementary,650.6500244,17.99544334
+Tuolumne,Columbia Union Elementary,660.75,17.73077011
+Tuolumne,Sonora Elementary,661.8499756,18.8104229
