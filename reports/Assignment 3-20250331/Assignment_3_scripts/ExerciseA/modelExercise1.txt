@@ -1,0 +1,24 @@
+
+  # JAGS model specification
+  model {
+  # Likelyhood 
+  for (i in 1:nBags) {
+  y[i] ~ dbin( p[b[i]], n[i] )
+  n[i] <- round(nContinuous[i])
+  nContinuous[i] ~ dnorm(normMu,normTau)
+  b[i] <- bBernoulli[i] + 1
+  bBernoulli[i] ~ dbern(1-catTheta) # equivalent to dcat(pCat[]) // pCat[1] = catTheta
+  }
+  # Priors
+  p[1] ~ dbeta(betaA,betaB)  # when b=0
+  p[2] ~ dbeta(1,1)          # when b=1
+  catTheta ~ dbeta(1,1)
+  # Constants
+  normMu <- 30
+  normTau <- 1/(normSigma*normSigma) #Convert to precision
+  normSigma <- 1.5
+  betaA <- 40
+  betaB <- 10
+  }
+  # ... JAGS model specification ends.
+  

@@ -1,8 +1,4 @@
 # Jags-Ymet-Xmet-Mrobust.R 
-# Accompanies the book:
-#  Kruschke, J. K. (2015). Doing Bayesian Data Analysis, Second Edition: 
-#  A Tutorial with R, JAGS, and Stan. Academic Press / Elsevier.
-
 source("DBDA2E-utilities.R")
 
 #===============================================================================
@@ -41,17 +37,18 @@ genMCMC = function( data , xName="x" , yName="y" ,
   # Specify the model for standardized data:
   model {
     for ( i in 1:Ntotal ) {
-      zy[i] ~ dt( zbeta0 + zbeta1 * zx[i] , 1/zsigma^2 , nu )
+      zy[i] ~ dnorm( zmu[i] , ztau )
+      zmu[i] <- zbeta0 + zbeta1 * zx[i]
     }
     # Priors vague on standardized scale:
     zbeta0 ~ dnorm( 0 , 1/(10)^2 )  
     zbeta1 ~ dnorm( 0 , 1/(10)^2 )
-    zsigma ~ dunif( 1.0E-3 , 1.0E+3 )
-    nu ~ dexp(1/30.0)
+    ztau ~ dgamma( 1.0E-2 , 1.0E-2 ) # corresponds to mean=1, var=100
     # Transform to original scale:
     beta1 <- zbeta1 * ysd / xsd  
     beta0 <- zbeta0 * ysd  + ym - zbeta1 * xm * ysd / xsd 
-    sigma <- zsigma * ysd
+    tau <- ztau / (ysd^2)
+    sigma <- 1/sqrt(tau)
   }
   " # close quote for modelString
   # Write out modelString to a text file
@@ -61,8 +58,8 @@ genMCMC = function( data , xName="x" , yName="y" ,
   # Let JAGS do it...
   #-----------------------------------------------------------------------------
   # RUN THE CHAINS
-  parameters = c( "beta0" ,  "beta1" ,  "sigma", 
-                  "zbeta0" , "zbeta1" , "zsigma", "nu" )
+  parameters = c( "beta0" ,  "beta1" ,  "tau", "sigma",
+                  "zbeta0" , "zbeta1" , "ztau" )
   adaptSteps = 500  # Number of steps to "tune" the samplers
   burnInSteps = 1000
   nChains = 4 
@@ -105,14 +102,9 @@ smryMCMC = function(  codaSamples ,
                                                 ROPE=ropeBeta1 ) )
   summaryInfo = rbind( summaryInfo , 
                        "sigma" = summarizePost( mcmcMat[,"sigma"] , 
-                                                compVal=compValSigma , 
-                                                ROPE=ropeSigma ) )
-  summaryInfo = rbind( summaryInfo , 
-                       "nu" = summarizePost( mcmcMat[,"nu"] , 
-                                             compVal=NULL , ROPE=NULL ) )
-  summaryInfo = rbind( summaryInfo , 
-                       "log10(nu)" = summarizePost( log10(mcmcMat[,"nu"]) , 
-                                                    compVal=NULL , ROPE=NULL ) )
+                                              compVal=compValSigma , 
+                                              ROPE=ropeSigma ) )
+  
   if ( !is.null(saveName) ) {
     write.csv( summaryInfo , file=paste(saveName,"SummaryInfo.csv",sep="") )
   }
@@ -138,12 +130,11 @@ plotMCMC = function( codaSamples , data , xName="x" , yName="y" ,
   chainLength = NROW( mcmcMat )
   zbeta0 = mcmcMat[,"zbeta0"]
   zbeta1 = mcmcMat[,"zbeta1"]
-  zsigma = mcmcMat[,"zsigma"]
+  ztau = mcmcMat[,"ztau"]
   beta0 = mcmcMat[,"beta0"]
   beta1 = mcmcMat[,"beta1"]
+  tau = mcmcMat[,"tau"]
   sigma = mcmcMat[,"sigma"]
-  nu = mcmcMat[,"nu"]
-  log10nu = log10(nu)
   #-----------------------------------------------------------------------------
   if ( pairsPlot ) {
     # Plot the parameters pairwise, to see correlations:
@@ -158,10 +149,11 @@ plotMCMC = function( codaSamples , data , xName="x" , yName="y" ,
       txt = paste(prefix, txt, sep="")
       if(missing(cex.cor)) cex.cor <- 0.8/strwidth(txt)
       text(0.5, 0.5, txt, cex=1.25 ) # was cex=cex.cor*r
+      on.exit(par(usr=usr))
     }
-    pairs( cbind( beta0 , beta1 , sigma , log10nu )[plotIdx,] ,
+    pairs( cbind( beta0 , beta1 , tau )[plotIdx,] ,
            labels=c( expression(beta[0]) , expression(beta[1]) , 
-                     expression(sigma) ,  expression(log10(nu)) ) , 
+                     expression(tau) ) , 
            lower.panel=panel.cor , col="skyblue" )
     if ( !is.null(saveName) ) {
       saveGraph( file=paste(saveName,"PostPairs",sep=""), type=saveType)
@@ -186,13 +178,7 @@ plotMCMC = function( codaSamples , data , xName="x" , yName="y" ,
         col="skyblue" , cex.lab = 1.75 )
   histInfo = plotPost( sigma , cex.lab = 1.75 , showCurve=showCurve ,
                        compVal=compValSigma , ROPE=ropeSigma ,
-                       xlab=bquote(sigma) , main=paste("Scale") )
-  histInfo = plotPost( log10nu , cex.lab = 1.75 , showCurve=showCurve ,
-                       compVal=NULL , ROPE=NULL ,
-                       xlab=bquote(log10(nu)) , main=paste("Normality") )
-  plot( log10nu[plotIdx] , sigma[plotIdx] , 
-        xlab=bquote(log10(nu)) ,ylab=bquote(sigma) , 
-        col="skyblue" , cex.lab = 1.75 )
+                       xlab=bquote(sigma) , main=paste("St. dev.") )
   if ( !is.null(saveName) ) {
     saveGraph( file=paste(saveName,"PostMarg",sep=""), type=saveType)
   }
@@ -225,12 +211,13 @@ plotMCMC = function( codaSamples , data , xName="x" , yName="y" ,
   curveWidth = (max(x)-min(x))/(nSlice+2)
   for ( i in floor(seq(from=1,to=chainLength,length=nPredCurves)) ) {
     for ( j in 1:length(curveXpos) ) {
-      yHDI = HDIofICDF( qt , credMass=postPredHDImass , df=nu[i] )
+      sigma = 1/sqrt(tau[i])  # Convert precision to standard deviation
+      yHDI = HDIofICDF( qnorm , credMass=postPredHDImass )  # Use normal distribution
       yComb = seq(yHDI[1],yHDI[2],length=75)
-      xVals = dt( yComb , df=nu[i] ) 
-      xVals = curveWidth * xVals / dt(0,df=nu[i])
+      xVals = dnorm( yComb )  # Use normal density
+      xVals = curveWidth * xVals / dnorm(0)
       yPred = beta0[i] + beta1[i]*curveXpos[j] 
-      yComb = yComb*sigma[i] + yPred
+      yComb = yComb*sigma + yPred
       lines( curveXpos[j] - xVals , yComb , col="skyblue" )
       lines( curveXpos[j] - 0*xVals , yComb , col="skyblue" , lwd=2 )
     }
@@ -275,12 +262,13 @@ plotMCMC = function( codaSamples , data , xName="x" , yName="y" ,
     curveWidth = (max(x)-min(x))/(nSlice+2)
     for ( i in floor(seq(from=1,to=chainLength,length=nPredCurves)) ) {
       for ( j in 1:length(curveXpos) ) {
-        yHDI = HDIofICDF( qt , credMass=postPredHDImass , df=nu[i] )
+        sigma = 1/sqrt(tau[i])  # Convert precision to standard deviation
+        yHDI = HDIofICDF( qnorm , credMass=postPredHDImass )  # Use normal distribution
         yComb = seq(yHDI[1],yHDI[2],length=75)
-        xVals = dt( yComb , df=nu[i] ) 
-        xVals = curveWidth * xVals / dt(0,df=nu[i])
+        xVals = dnorm( yComb )  # Use normal density
+        xVals = curveWidth * xVals / dnorm(0)
         yPred = beta0[i] + beta1[i]*curveXpos[j] 
-        yComb = yComb*sigma[i] + yPred
+        yComb = yComb*sigma + yPred
         lines( curveXpos[j] - xVals , yComb , col="skyblue" )
         lines( curveXpos[j] - 0*xVals , yComb , col="skyblue" , lwd=2 )
       }
@@ -291,6 +279,30 @@ plotMCMC = function( codaSamples , data , xName="x" , yName="y" ,
       saveGraph( file=paste(saveName,"PostPredYint",sep=""), type=saveType)
     }
   }
+  showPosteriorPredictiveSample = TRUE
+  if (showPosteriorPredictiveSample) {
+    # Function to sample from posterior predictive distribution
+    sample_posterior_predictive <- function(beta0,beta1,sigma, xNew) {
+      
+      # Calculate mean for each posterior sample
+      muNew <- beta0 + beta1 * xNew
+      
+      # Generate predicted y values (one for each posterior sample)
+      y_predicted <- rnorm(length(muNew), mean = muNew, sd = sigma)
+      
+      return(y_predicted)
+    }
+    # Sample from posterior predictive at x=20
+    y_pred_x20 <- sample_posterior_predictive(beta0,beta1,sigma,xNew = 20)
+    # Plot the posterior predictive distribution
+    openGraph(width=8,height=5)
+    histInfo = plotPost(y_pred_x20,main=paste("Posterior Predictive x=20"))
+    if ( !is.null(saveName) ) {
+      saveGraph( file=paste(saveName,"PostPredx20",sep=""), type=saveType)
+    }
+  }
 }
 
 #===============================================================================
+
+
